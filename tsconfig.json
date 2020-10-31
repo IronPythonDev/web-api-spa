@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "removeComments": true,
+    "outDir": "bin",
+    "sourceMap": true,
+    "outFile": "./bin/index.js"
+  },
+  "files": ["./index.ts"]
+}
