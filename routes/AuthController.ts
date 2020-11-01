@@ -44,7 +44,9 @@ router.post("/register", async (req, res, next) => {
       registerDate: new Date(),
     })
     await savedUser.save()
-    res.send({ id: savedUser._id })
+
+    const token = new Token(savedUser._id, process.env.TOKEN_SECRET)
+    return token.saveTokenToCookie(res).send({ id: savedUser._id })
   } catch (e) {
     next(e)
   }
